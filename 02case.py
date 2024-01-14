@@ -1,7 +1,7 @@
 # 人生重开模拟器~
 # 游戏开始的时候,设定初始属性:颜值,智力,家境,体质
 # 开始游戏随机生成性别和出生点
-# 针对每一年生成人生经理(随机因素加当前角色的属性)
+# 针对每一年生成人生经历(随机因素加当前角色的属性)
 import random
 import sys
 import time
@@ -23,10 +23,6 @@ while True:
     # 设置初始属性:颜值,智力,家境,体质,总和不能超过20,每一项取值都是1-10之间
     print(f'请设置初始属性(总点数20)')
     face = int(input('请输入颜值(1~10):'))
-    # strong = int(input('请输入体质(1~10):'))
-    # IQ = int(input('请输入智力(1~10):'))
-    # home = int(input('请输入家境(1~10):'))
-
     # 通过条件语句,对于用户的输入进行判断
     if 0 <= face <= 10:
         strong = int(input('请输入体质(1~10):'))
@@ -44,10 +40,6 @@ while True:
                         print('初始属性设置完毕')
                         print(f'您当前的属性为:颜值{face},体质{strong},智力{IQ},家境{home}')
                         break
-                    # elif 0 <= count < 20:
-                    #     temp = 20 - face - strong - IQ - home
-                    #     print(f"您尚有{temp}点未分配,请重新分配")
-                    #     continue
                     else:
                         print("点数不够用啦~重新进行设置吧")
                         continue
@@ -63,28 +55,6 @@ while True:
     else:
         print("请重新输入")
         continue
-    # if face < 1 or face > 10 :
-    #     print("请重新输入颜值")
-    #     continue
-    # if strong < 1 or strong > 10 :
-    #     print("请重新输入体质")
-    #     continue
-    # if IQ < 1 or IQ > 10:
-    #     print("请重新输入智力")
-    #     continue
-    # if home < 1 or home > 10:
-    #     print("请重新输入家境")
-    #     continue
-
-    # 判断总点数是否正确
-    # count = face + strong + IQ + home
-    # if count < 0 or count > 20:
-    #     print('总属性和越界,请重新输入')
-    #     continue
-    #
-    # print('初始属性设置完毕')
-    # print(f'您当前的属性为:颜值{face},体质{strong},智力{IQ},家境{home}')
-    # break
 
 # 生成角色的性别
 # random.Random(begain,end),就能生成[beg,end]的随机整数
@@ -113,8 +83,6 @@ PointFace = random.randint(1, 3)
 PointStrong = random.randint(1, 3)
 PointIQ = random.randint(1, 3)
 PointHome = random.randint(1, 3)
-# temp = point + Home
-# print(temp)
 
 if Home >= 10:
     # 第一档
